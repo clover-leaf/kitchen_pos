@@ -1,8 +1,9 @@
+import 'package:client_repository/client_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:kitchen_pos/home/home.dart';
+import 'package:kitchen_pos/gen/fonts.gen.dart';
+import 'package:kitchen_pos/home/view/home_page.dart';
 import 'package:kitchen_pos/l10n/l10n.dart';
-import 'package:kitchen_repository/kitchen_repository.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -12,24 +13,24 @@ class App extends StatefulWidget {
 }
 
 class _AppState extends State<App> {
-  late final KitchenRepository _kitchenRepository;
+  late final ClientRepository _clientRepository;
 
   @override
   void initState() {
     super.initState();
-    _kitchenRepository = KitchenRepository();
+    _clientRepository = ClientRepository();
   }
 
   @override
   void dispose() {
-    _kitchenRepository.close();
+    _clientRepository.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
-      value: _kitchenRepository,
+      value: _clientRepository,
       child: const AppView(),
     );
   }
@@ -43,10 +44,8 @@ class AppView extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
-        ),
+        fontFamily: FontFamily.poppins,
+        useMaterial3: true,
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
