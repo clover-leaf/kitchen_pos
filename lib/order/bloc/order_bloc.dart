@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:client_repository/client_repository.dart';
 import 'package:equatable/equatable.dart';
-import 'package:pos_server/pos_server.dart';
 
 part 'order_event.dart';
 part 'order_state.dart';
@@ -63,7 +62,13 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
   }
 
   void _onDeliveryDish(DeliveryDish event, Emitter<OrderState> emit) {
-    final data = {'invoice_dishes': state.selectedDishes};
+    final data = {
+      'dishes_id': state.selectedDishes
+          .map((InvoiceDish invDish) => invDish.id)
+          .toList(),
+      'invoice_dishes': state.selectedDishes,
+      'table_id': 1
+    };
     _clientRepository.delivery(data);
     emit(state.copyWith(selectedDishes: []));
   }

@@ -40,12 +40,17 @@ class HomeNavbar extends StatelessWidget {
             const NavbarLabel('TASKS'),
             NavbarButton(
               selectedTab: selectTab,
-              tab: HomeTab.order,
+              tab: HomeTab.orders,
               svgGenImage: Assets.images.icons.main,
               badgeNumber: prepareDishesNumber,
             ),
             const SizedBox(height: 16),
             const NavbarLabel('Statistic'),
+            NavbarButton(
+              selectedTab: selectTab,
+              tab: HomeTab.rating,
+              svgGenImage: Assets.images.icons.main,
+            ),
           ],
         ),
       ),

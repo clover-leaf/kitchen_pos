@@ -12,8 +12,8 @@ Future<void> main() async {
     size: Size(1080, 720),
     center: true,
     backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
+    // skipTaskbar: false,
+    // titleBarStyle: TitleBarStyle.hidden,
   );
   await windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();

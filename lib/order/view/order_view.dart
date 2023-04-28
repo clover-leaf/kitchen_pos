@@ -1,9 +1,9 @@
+import 'package:client_repository/client_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:kitchen_pos/gen/colors.gen.dart';
 import 'package:kitchen_pos/order/order.dart';
-import 'package:pos_server/pos_server.dart';
 
 class OrderView extends StatelessWidget {
   const OrderView({super.key});
@@ -159,7 +159,7 @@ class DeliveryButton extends StatelessWidget {
         child: const Padding(
           padding: EdgeInsets.symmetric(vertical: 16),
           child: Text(
-            'DELIVERY',
+            'DELIVER',
             style: TextStyle(
               fontSize: 14,
               color: Colors.white,

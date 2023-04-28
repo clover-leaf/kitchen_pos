@@ -15,20 +15,18 @@ dependencies:
     git:
       url: https://github.com/clover-leaf/pos_client_repository.git
       ref: master
+  elegant_notification: ^1.8.1
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
+  flutter_rating_bar: ^4.0.1
   flutter_svg: ^2.0.2
   google_fonts: ^4.0.3
   intl: ^0.17.0
   lazy_load_indexed_stack: ^0.1.4
-  pos_server:
-    git:
-      url: https://github.com/clover-leaf/pos_server.git
-      ref: master
   web_socket_client: ^0.1.0-dev.1
   window_manager: ^0.3.1
 
